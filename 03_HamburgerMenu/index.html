@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <style>
+        /*shift + alt + f*/
+        @import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap');
+
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        :root{
+            --background: #213a57;
+            --font-color: #80ed99;
+            --button-color: #0ad1c8;
+            --nav-color: #0b6477;
+            --line-color: #45dfb1;
+        }
+        body{
+            background-color: var(--background);
+        }
+
+        main{
+            height: 1000px;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            position: sticky;
+            top: 0px;
+            margin: auto;
+            height: auto;
+            width: 100vw;
+            padding-left: 10px;
+            background-color: var(--nav-color);
+        }
+
+        a:hover{
+            zoom: 2;
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 20px;
+            width: 20px;
+            padding: 20px 0;
+        }
+
+        .hamburger div {
+            width: 100%;
+            margin: 2px;
+            border: 3px solid black;
+            border-radius: 3px;
+            display: block;
+            transition: all 0.5s;
+        }
+
+        nav a {
+            display: none;
+            font-family: "Protest Guerrilla", sans-serif;
+            text-decoration: none;
+            font-size: 2rem; /*16px = 1rem*/
+            cursor: pointer;
+            padding: 20px 0;
+        }
+
+        nav a.open {
+            display: block;
+        }
+
+        .hamburger.open div:first-child{
+            position: relative;
+            top: 5px;
+            transform: rotate(45deg);
+            transition: all 0.5s;
+        }
+
+        .hamburger.open div:last-child{
+            position: relative;
+            bottom: 5px;
+            transform: rotate(-45deg);
+            transition: all 0.5s;
+        }
+
+        .hamburger.open div:nth-child(2){
+            display: none;
+            transition: all 0.5s;
+        }
+
+
+
+        @media screen and (min-width: 800px) {
+            nav {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                align-items: center;
+                width: 70vw;
+                transform: skewX(25deg);
+                box-shadow: -10px -10px 10px 0px rgba(0, 0, 0, 0.5);
+                top: 20px;
+
+            }
+
+            .hamburger {
+                display: none;
+            }
+
+            nav a {
+                display: block;
+                transform: skewX(-25deg);
+            }
+
+            a:hover{
+                zoom: 1;
+            }
+
+            a::after{
+                content:"";
+                display: block;
+                position: absolute;
+                height: 2px;
+                width: 0px;
+                background-color: var(--line-color);
+                transition: all 0.5s;
+            }
+            a:hover::after{
+                width: 100%;
+                transition: all 0.5s;
+            }
+
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <a href="#">Kezdőoldal</a>
+        <a href="#">Galéria</a>
+        <a href="#">Árak</a>
+        <a href="#">Rólunk</a>
+        <a href="#">Kapcsolat</a>
+    </nav>
+    <main></main>
+
+    <script>
+        let menuItems = document.querySelectorAll("nav a");
+        let menuToggler = document.querySelector(".hamburger");
+
+        menuToggler.addEventListener("click", function () {
+            menuToggler.classList.toggle("open")
+            let s = 0;
+            for (let i = 0; i < menuItems.length; i++) {
+                setTimeout(function (){
+                    menuItems[i].classList.toggle("open");
+                },s);
+                s+=50;
+            }
+        })
+/*
+                var nyitva = false
+                menuToggler.onclick = function () {
+                    nyitva = !nyitva;
+                    for (let menuItem of menuToggler){
+                        if(nyitva){
+                            menuItem.classList.add("open")
+                        }
+                        else{
+                            menuItem.classList.remove("open")
+                        }
+                    }
+                }
+                */
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Számológép</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Sixtyfour+Convergence:SCAN@-25&display=swap');
+        body {
+            background-image: url("felhoImgur.gif");
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .calculator {
+            width: 320px;
+            padding: 20px;
+            background-color: black;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .display {
+            width: 95%;
+            height: 50px;
+            margin-bottom: 10px;
+            background-color: rgb(33, 33, 33);
+            color: white;
+            text-align: right;
+            padding: 10px;
+            font-size: 2em;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px; 
+        }
+
+        .button {
+            width: 100%;
+            padding: 20px;
+            background-color: rgb(33, 33, 33);
+            color: whitesmoke;
+            font-size: 1.5em;
+            border: none;
+            border-radius: 100px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .button:hover{
+            background-color: rgb(22, 22, 22);
+        }
+
+        .button.operator {
+            background-color: rgb(107, 73, 9);
+        }
+        .button.operator:hover {
+            background-color: rgb(50, 33, 3);
+        }
+        .button.clear {
+            background-color: rgb(88, 10, 10);
+        }
+        .button.clear:hover {
+            background-color: rgb(53, 5, 5);
+        }
+
+        .button.equal {
+            grid-column: span 4; /* egesz sor legyen */
+            background-color: rgb(6, 63, 6);
+        }
+        .button.equal:hover {
+            grid-column: span 4;
+            background-color: rgb(4, 41, 4);
+        }
+    </style>
+</head>
+<body>
+
+<div class="calculator">
+    <input type="text" class="display" disabled placeholder="0">
+    <div class="buttons">
+        <button class="button">7</button>
+        <button class="button">8</button>
+        <button class="button">9</button>
+        <button class="button operator">/</button>
+
+        <button class="button">4</button>
+        <button class="button">5</button>
+        <button class="button">6</button>
+        <button class="button operator">*</button>
+
+        <button class="button">1</button>
+        <button class="button">2</button>
+        <button class="button">3</button>
+        <button class="button operator">-</button>
+
+        <button class="button">0</button>
+        <button class="button">.</button>
+        <button class="button clear">C</button>
+        <button class="button operator">+</button>
+
+        <button class="button equal">=</button>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

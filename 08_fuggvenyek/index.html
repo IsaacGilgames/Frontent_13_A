@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function neve(a, b) {
+            let c = a + b;
+            return c;
+        }
+
+        console.log(neve(2, 5));
+
+        var nevtelen = function (a, b) {
+            let c = a + b;
+            return c;
+        }
+
+        function kiir() {
+            console.log("Kiírás")
+        }
+
+        console.log(nevtelen(4, 9))
+
+
+
+
+    </script>
+</head>
+
+<body>
+    <button onclick="kiir()">Kattints1</button>
+    <button id="btn">Kattints2</button>
+
+    <script>
+        var btn = document.getElementById("btn")
+
+        btn.onclick = function () {
+            console.log("Event névtelen függvénye")
+        }
+
+         const nev = function(name){
+            return `Hello ${name}`
+         }
+
+         console.log(nev("Martin"))
+
+         const nev2 = name => `Hello ${name}`
+         console.log(nev2("Krisz"))
+
+         let tomb = [2, 6, 8, 3]
+         console.log(tomb.map(x => x*2))
+         console.log(tomb.map((x, i) => x*i))
+         console.log(tomb.filter(x => x % 2 === 0))
+
+
+    </script>
+</body>
+
+</html>

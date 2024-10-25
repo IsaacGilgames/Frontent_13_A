@@ -1,0 +1,21 @@
+html{
+    height: 100vh;
+}
+
+body{
+    height: 100%;
+    overflow: hidden;
+}
+
+#oldal{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-direction: center;
+}
+
+#ido{
+    font-size: 3rem; /*48px*/
+    text-align: center;
+}

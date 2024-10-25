@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../beadando"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "szamologep"
+	}
+}

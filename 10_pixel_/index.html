@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        main{
+            display: flex;
+            flex-direction: row;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .setting{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 250px;
+            height: 550px;
+        }
+
+        .draw{
+            width: 1000px;
+            height: 550px;
+            border: thin solid black;
+            display: grid;
+            grid-template-columns: repeat(100, 10px);
+            grid-template-rows: repeat(55, 10px);
+        }
+
+        .kocka{
+            border: thin solid black;
+            width: 10px;
+            height: 10px;
+        }
+    </style>
+
+
+</head>
+<body>
+    <main>
+
+        <div class="draw">
+
+
+        </div>
+
+        <div class="setting">
+            <label for="szin">Milyen színnel szeretnél rajzolni?</label>
+            <input type="color" id="szin">
+        </div>
+    </main>
+
+    <script>
+        let elem = document.querySelector(".draw")
+        for (let i = 0; i< 5500; i++){
+            let a = document.createElement("div")
+            a.classList.add("kocka")
+            elem.appendChild(a);
+        }
+
+        let szin = document.querySelector("input");
+        console.log(szin.value);
+        let divs = document.querySelectorAll(".kocka");
+        for(let div of divs){
+            div.onclick = function(){
+                szin = document.querySelector("input")
+                this.style.backgroundColor = szin.value;
+            }
+        }
+
+
+    </script>
+</body>
+</html>

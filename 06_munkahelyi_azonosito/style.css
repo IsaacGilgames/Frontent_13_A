@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#azonosito{
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.cookieWarning{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 50px;
+    background-color: yellow;
+    display: none;
+    justify-content: space-between;
+}
+
+.irogep{
+    width: 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: szeles 10s infinite linear;
+
+}
+
+@keyframes szeles {
+    to{
+        width: 100%;
+    }
+}
